@@ -1,0 +1,107 @@
+<html>
+   <head>
+      <script>
+         function func(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         function res()
+         {
+             let x = document.getElementById("result").value
+             let y = eval(x)
+             document.getElementById("result").value = y
+         }
+         function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+      </script>
+      <style>
+
+          
+        table {
+                margin: .3em;
+                width: 400px;
+                height: 300px;
+              }
+
+        th {
+               color:rgb(3, 3, 3);
+               padding: .2em;
+            }
+
+        td {
+               padding-left: .3em;
+               padding-right: .3em;
+               border: 1.2px solid rgb(8, 4, 4);
+               background-color: rgb(14, 7, 31);
+            }
+
+      #trHeader {
+                color: rgb(3, 2, 2);
+                }
+
+      .centerCell {
+                 text-align: center;
+                  }
+         .title{
+         margin-bottom: 10px;
+         text-align:center;
+         width: 400px;
+         color:rgb(35, 27, 153);
+         border: solid black 5px;
+         }
+  
+         input[type="button"]
+         {
+         background-color:rgb(22, 148, 121);
+         color: black;
+         border: solid black 5px;
+         width:100%;
+         height:85%;
+         }
+  
+         input[type="text"]
+         {
+         background-color:white;
+         border: solid black 1.5px;
+         width:100%;
+         height:85%;
+         }
+      </style>
+   </head>
+   <body >
+      <div class = title >CALCULATOR</div>
+      <table border="3">
+         <tr>
+            <td colspan="3"><input type="text" id="result"/></td>
+            <td><input type="button" value="c" onclick="clr()"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="1" onclick="func('1')"/> </td>
+            <td><input type="button" value="2" onclick="func('2')"/> </td>
+            <td><input type="button" value="3" onclick="func('3')"/> </td>
+            <td><input type="button" value="/" onclick="func('/')"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="4" onclick="func('4')"/> </td>
+            <td><input type="button" value="5" onclick="func('5')"/> </td>
+            <td><input type="button" value="6" onclick="func('6')"/> </td>
+            <td><input type="button" value="-" onclick="func('-')"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="7" onclick="func('7')"/> </td>
+            <td><input type="button" value="8" onclick="func('8')"/> </td>
+            <td><input type="button" value="9" onclick="func('9')"/> </td>
+            <td><input type="button" value="+" onclick="func('+')"/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="." onclick="func('.')"/> </td>
+            <td><input type="button" value="0" onclick="func('0')"/> </td>
+            <td><input type="button" value="=" onclick="res()"/> </td>
+            <td><input type="button" value="*" onclick="func('*')"/> </td>
+         </tr>
+      </table>
+   </body>
+</html>   
