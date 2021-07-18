@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+                font-size:larger;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+                color:rgb(16, 18, 19);
+                text-align: center;
+            }
+            h2{
+                font-size:medium;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:rgb(8, 52, 80);
+                text-align: center;
+            }
+            form{
+                text-align: center;
+            }
+            p{
+                font-size:large;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+        </style>
+        <title>Guess the number</title>
+        <script>
+            var turn=0;
+            var lastturn=3;
+            var correct_guess=Math.floor((Math.random() * 10)+ 1);
+            function myfunc() {
+                var n=document.getElementById("number").value;
+                if(turn==lastturn)
+                {
+                    document.write("Expected number was : "+correct_guess+" .");
+                    document.write(" Sorry you're out of guesses.");
+                }
+                if(n==correct_guess) {
+                    alert("correct guess");
+                }
+                else if(n<correct_guess)
+                {
+                    alert("Try guessing higher number than "+n);
+                    turn++;
+                }
+                else 
+                {
+                    alert("Try guessing lower number than "+n);
+                    turn++;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Guess the correct number!</h1>
+        <h2> Enter a number from 1 to 10:</h2>
+        <form>
+            <input type="number" id="number" name="number" value="1">
+            <input type="button" onclick="myfunc()" value="Try guessing">
+        </form>
+    </body>
+</html>

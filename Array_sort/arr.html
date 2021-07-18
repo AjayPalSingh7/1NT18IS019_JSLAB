@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var arr1 = [];
+            var arr2 = [];
+            function func(){
+                var value = document.getElementById("text").value;
+                console.log(value);
+                var pattern = new RegExp('^[0-9]+$');
+                if(pattern.test(value)){
+                   console.log("number entered")
+                   arr1.push(value);
+                   arr1 =arr1.sort();
+                   
+                }
+                else{
+                    console.log("string entered")
+                    arr2.push(value);
+                    arr2 = arr2.sort();
+                }
+                document.getElementById("numbers").innerHTML =arr1;
+                document.getElementById("strings").innerHTML = arr2;            
+            }
+            function color1(){
+                document.getElementById("mouseTarget").style.backgroundColor = 'rgb(216,92,185)';
+                mouseTarget.style.border = '5px solid black';
+            }
+            function color2(){
+                document.getElementById("mouseTarget").style.backgroundColor = 'rgb(134, 139, 190)';
+                mouseTarget.style.border = '3px solid black';
+            }
+        </script>
+        <style>
+            #mouseTarget {
+                box-sizing:border-box;
+                width:20rem;
+                border:3px solid rgb(17, 4, 9);
+                background-color: rgb(134, 139, 190);
+                margin: auto;                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id='mouseTarget' onmouseover="color1()" onmouseout="color2()" >
+            <center><p>Enter number/string: </p><input  id="text"><br/><br/>
+            <button onclick="func()">add to arrays</button><br/>
+            <p>numbers after sorting are : </p>
+            <p id="numbers"></p>
+            <p>strings after sorting are: </p>
+            <p id="strings"></p><br/></center>
+        </div>
+
+    </body>
+</html>

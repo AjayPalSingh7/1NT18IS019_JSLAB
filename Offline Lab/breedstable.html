@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breeds Table</title>
+    <style>
+      table {
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+      }
+      #t01 tr:nth-child(even) {
+        background-color: #eee;
+      }
+      #t01 tr:nth-child(odd) {
+        background-color: #fff;
+      }
+      #t01 th {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="t01">
+      <tr>
+        <th>Breed</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Video</th>
+        <th>Audio</th>
+      </tr>
+      <tr>
+        <td>Afador</td>
+        <td>
+          The Afador is a mixed breed dog–a cross between the Afghan Hound and
+          Labrador Retriever dog breeds. Loyal, energetic, and affectionate,
+          these pups inherited some of the best qualities from both of their
+          parents.
+        </td>
+        <td><img src="dog1.jpg" alt="Dog" width="250" height="390" /></td>
+        <td>
+          <video width="320" height="240" controls>
+            <source src="video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </td>
+        <td>
+          <audio controls>
+            <source src="dogsound.mp3" type="audio/mp3" />
+            Your browser does not support the audio tag.
+          </audio>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+<style>
+    body {
+        background-color: antiquewhite ;
+        background-size: 1500px 800px
+    }
+    p {
+        color:rgb(24, 122, 214);
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+        font-size: large;
+    }
+    button{
+        background-color: rgb(55, 223, 172);
+        color: rgb(201, 41, 148);
+    }
+    h1{
+        font-family: Georgia, 'Times New Roman', Times, serif ;
+    }
+</style>    
+<center><h1 style="color:rgba(53, 158, 106, 0.836);">Regular Expressions</h1> 
+    
+<center><h3 style="color:rgba(7, 136, 86, 0.979);">  SUBMITED BY: Ajay Pal Singh </h3>       
+    <center><h3 style="color:rgba(35, 43, 168, 0.979);">  USN:1NT18IS019  </h3>
+        <center><h3 style="color:rgba(94, 179, 228, 0.979);">  Sec:A  </h3>
+
+<center><p><b>ARRAY :['goal','new','user','sit','eat','dinner']</b></p>
+<p><b><I>Click on the button to filter all elements that do not contain e.</I></b></p>
+
+<b><button onclick="Func1()"><b>CLICK ME !!</b></button>
+
+<p id="p1"></p>
+
+<p><b><I>Click on the button to filter all elements that contains both e and n.</I></b></p>
+
+<button onclick="Func2()"><b>CLICK ME !!</b></button>
+
+<p id="p2"></p>
+<p><b>ARRAY : ['lovely', 'dentist', 'lonely', 'eden', 'fly', 'dent']</b></p>
+
+<p><b><I>Click on the button to filter all elements that start with den or end with ly</I></b></p>
+
+<button onclick="Func3()"><b>CLICK ME !!</b></button>
+
+<p id="p3"></p>
+
+<p><b>ARRAY : ['handed', 'hand', 'handy', 'unhanded', 'handle', 'hand-2']</b></p>
+
+<p><b><I>Click on the button to replace hand with X for all words that start with hand followed by at least one word character.</I></b></p>
+
+<button onclick="Func4()"><b>CLICK ME !!</b></button>
+
+<p id="p4"></p>
+
+<p><b>String : 'refused reed redo received'</b></p>
+
+<p><b><I>Click on the button to replace all occurrences of removed or reed or received or refused with X.</I></b></p>
+
+<button onclick="Func5()"><b>CLICK ME !!</b></button>
+
+<p id="p5"></p>
+
+<p><b>String: 'th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations'</b> </p>
+
+<p><b><I>Click on the button to Replace all occurrences of \e with e.</I></b></p>
+
+<button onclick="Func6()"><b>CLICK ME !!</b></button>
+
+<p id="p6"></p></center>
+
+<script>
+
+function Func1() {
+    let activity = ['goal','new','user','sit','eat','dinner'];
+    const patt = new RegExp("e");
+    document.getElementById("p1").innerHTML = activity.filter(activity => !patt.test(activity));
+}
+
+function Func2() {
+    let activity = ['goal','new','user','sit','eat','dinner'];
+    const pat1 = /e/;
+    const pat2 = /n/;
+    document.getElementById("p2").innerHTML = activity.filter(activity => pat1.test(activity)&&pat2.test(activity));
+}
+
+function Func3()
+{
+    items = ['lovely', 'dentist', 'lonely', 'eden', 'fly', 'dent']
+    const pat1 = /^den/;
+    const pat2 = /ly$/;
+    document.getElementById("p3").innerHTML = items.filter(item => pat1.test(item)||pat2.test(item));
+}
+
+function Func4()
+{
+    items = ['handed', 'hand', 'handy', 'unhanded', 'handle', 'hand-2']
+    const pat1 = /^hand[a-zA-Z]+/;
+    document.getElementById("p4").innerHTML = items.map(item =>
+    {
+    if(pat1.test(item))
+    return item.replace("hand",'x');
+    else
+    return item;
+    })
+}
+
+function Func5()
+{
+    let str= "refused reed redo received"
+    const pat=/removed|reed|refused|received/gi;
+      let newstr=str.replace(pat,"X");
+      document.getElementById("p5").innerHTML = newstr;
+}
+
+function Func6()
+{
+    let str= "th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations";
+       let pat=/\\e/gi;
+      let newstr=str.replace(pat,"e");
+      document.getElementById("p6").innerHTML = newstr;
+}
+</script>
+</head>
+</body>
+</html>

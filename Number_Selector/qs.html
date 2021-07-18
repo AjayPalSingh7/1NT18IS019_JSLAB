@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUERY SELECTOR</title>
+    <style >
+        button{
+            margin:10px;
+            margin: auto;
+        }
+        h1{
+            margin: auto;
+            font-weight: 500;
+            font:1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(1, 6, 14);
+            font-size:initial;
+        }
+    </style>
+</head>
+<body>
+    <center><b><h1>Click the button to change the background color</h1></b>
+    </br><button class="btn">Color1</button>
+    </br></br><button class ="btn">Color2</button></br></br></center>
+    <script>
+        const btn=document.querySelectorAll('button');
+        function random(number)
+        {
+            return Math.floor(Math.random()*number);
+        }
+        function bgChange()
+        {
+            const col='rgb(' + random(255) + ',' + random(255) + ',' + random(255) +')';
+            document.body.style.backgroundColor =  col;
+        }
+        for( var i = 0;i<btn.length;i++)
+        {
+            btn[i].onblur = bgChange;
+        }
+   </script>
+</body>
+</html>
